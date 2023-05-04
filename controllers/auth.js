@@ -1,4 +1,4 @@
-const user = require("../models/user");
+const User = require("../models/user");
 
 exports.getLogin = (req, res, next) => {
   //   const isLoggedIn =
@@ -13,8 +13,7 @@ exports.getLogin = (req, res, next) => {
 };
 
 exports.postLogin = (req, res, next) => {
-  user
-    .findById("644fd578e4001da1d896e942")
+  User.findById("644fd578e4001da1d896e942")
     .then((user) => {
       req.session.isLoggedIn = true;
       req.session.user = user;
